@@ -47,50 +47,76 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 pt-20">
       {/* Introduction Section */}
       <div className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-          {/* Main Heading with Profile Picture */}
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <h1 className="text-5xl md:text-7xl font-bold text-white">
-              Hi, I'm <span className="text-primary-400">{personalInfo.name}</span>
-            </h1>
-          </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-12 items-center animate-fade-in-up">
+            {/* Text Content - Left Side (4/5 of width) */}
+            <div className="md:col-span-4">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Hi, I'm <span className="text-primary-400">{personalInfo.name}</span>
+              </h1>
 
-          {/* Title/Subtitle */}
-          <h2 className="text-2xl md:text-3xl text-gray-300 mb-8 font-light">
-            {personalInfo.title}
-          </h2>
+              {/* Title/Subtitle */}
+              <h2 className="text-2xl md:text-3xl text-gray-300 mb-8 font-light">
+                {personalInfo.title}
+              </h2>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-12">
-            {personalInfo.socialLinks.github && (
-              <a
-                href={personalInfo.socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary-400 transition-colors"
-                aria-label="GitHub"
-              >
-                <FaGithub className="w-6 h-6" />
-              </a>
-            )}
-            {personalInfo.socialLinks.linkedin && (
-              <a
-                href={personalInfo.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="w-6 h-6" />
-              </a>
-            )}
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="text-gray-300 hover:text-primary-400 transition-colors"
-              aria-label="Email"
-            >
-              <FaEnvelope className="w-6 h-6" />
-            </a>
+              {/* Bio */}
+              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
+                {personalInfo.bio}
+              </p>
+
+              {/* Social Links */}
+              <div className="flex space-x-6">
+                {personalInfo.socialLinks.github && (
+                  <a
+                    href={personalInfo.socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-primary-400 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <FaGithub className="w-6 h-6" />
+                  </a>
+                )}
+                {personalInfo.socialLinks.linkedin && (
+                  <a
+                    href={personalInfo.socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-primary-400 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin className="w-6 h-6" />
+                  </a>
+                )}
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="text-gray-300 hover:text-primary-400 transition-colors"
+                  aria-label="Email"
+                >
+                  <FaEnvelope className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+
+            {/* Profile Picture - Right Side (1/5 of width, circular) */}
+            <div className="md:col-span-1 flex justify-center md:justify-end">
+              <div className="relative">
+                <img
+                  src="/images/profile.png"
+                  alt={personalInfo.name}
+                  className="w-full max-w-[20vw] aspect-square rounded-full object-cover border-4 border-primary-400/50 shadow-2xl"
+                  style={{ minWidth: '120px', maxWidth: '200px' }}
+                  onError={(e) => {
+                    // Hide image if it doesn't exist
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-full bg-primary-400/20 blur-xl -z-10"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

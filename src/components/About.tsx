@@ -1,5 +1,4 @@
 import { personalInfo } from '../data/personalInfo';
-import { experiences } from '../data/experience';
 import { education } from '../data/education';
 
 /**
@@ -9,56 +8,7 @@ import { education } from '../data/education';
  * Add photos to public/images/ and reference them here.
  */
 const About = () => {
-  // Helper function to parse date string "MMM YYYY" to comparable format
-  const parseDate = (dateStr: string): number => {
-    if (dateStr === 'Present') return 999999;
-    
-    const months: { [key: string]: number } = {
-      'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
-      'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12
-    };
-    
-    const parts = dateStr.split(' ');
-    if (parts.length !== 2) return 0;
-    
-    const month = months[parts[0]] || 0;
-    const year = parseInt(parts[1]) || 0;
-    
-    return year * 100 + month;
-  };
 
-  // Combine experiences and education for reverse chronological display
-  interface ActivityItem {
-    title: string;
-    period: string;
-    type: string;
-    activities?: string[];
-  }
-
-  const allActivities: ActivityItem[] = [
-    ...experiences.map(exp => ({
-      title: `${exp.position} at ${exp.company}`,
-      period: `${exp.startDate} - ${exp.endDate}`,
-      type: exp.type,
-    })),
-    ...education.map(edu => ({
-      title: `${edu.degree}${edu.field ? `, ${edu.field}` : ''} at ${edu.school}`,
-      period: `${edu.startDate} - ${edu.endDate}`,
-      type: 'Education',
-      activities: edu.activities,
-    })),
-  ].sort((a, b) => {
-    const endDateA = a.period.includes('Present') ? 'Present' : a.period.split(' - ')[1] || '';
-    const endDateB = b.period.includes('Present') ? 'Present' : b.period.split(' - ')[1] || '';
-    
-    if (endDateA === 'Present' && endDateB !== 'Present') return -1;
-    if (endDateB === 'Present' && endDateA !== 'Present') return 1;
-    
-    const dateA = parseDate(endDateA);
-    const dateB = parseDate(endDateB);
-    
-    return dateB - dateA; // Descending order (most recent first)
-  });
 
   return (
     <div className="min-h-screen py-20 bg-slate-800">
@@ -92,9 +42,9 @@ const About = () => {
             <div className="flex justify-center md:justify-end">
               <div className="relative">
                 <img
-                  src="/images/profile.png"
+                  src="/images/casual_headshot.jpg"
                   alt={personalInfo.name}
-                  className="w-full max-w-md rounded-lg shadow-2xl object-cover border-4 border-primary-400/50"
+                  className="w-full max-w-[280px] h-auto rounded-lg shadow-lg object-cover border-2 border-primary-400/50"
                   onError={(e) => {
                     // Fallback if image doesn't exist
                     const target = e.target as HTMLImageElement;
@@ -102,47 +52,50 @@ const About = () => {
                     const parent = target.parentElement;
                     if (parent) {
                       parent.innerHTML = `
-                        <div class="w-full max-w-md h-96 bg-gradient-to-br from-primary-600/30 to-indigo-600/30 flex items-center justify-center border-4 border-dashed border-primary-500/50 rounded-lg">
-                          <span class="text-gray-400 text-center px-4">Add profile.png to /public/images/</span>
+                        <div class="w-full max-w-[280px] h-64 bg-gradient-to-br from-primary-600/30 to-indigo-600/30 flex items-center justify-center border-2 border-dashed border-primary-500/50 rounded-lg">
+                          <span class="text-gray-400 text-center px-4 text-sm">Add casual_headshot.jpg</span>
                         </div>
                       `;
                     }
                   }}
                 />
                 {/* Decorative element */}
-                <div className="absolute -bottom-4 -right-4 w-full h-full bg-primary-500 rounded-lg -z-10 opacity-20"></div>
+                <div className="absolute -bottom-2 -right-2 w-full h-full bg-primary-500 rounded-lg -z-10 opacity-15"></div>
               </div>
             </div>
           </div>
 
           {/* Photo Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-              <div
-                key={num}
-                className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer"
-              >
+          <div className="mb-16">
+            <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+              {/* Golfing */}
+              <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
                 <img
-                  src={`/images/about-${num}.jpg`}
-                  alt={`About photo ${num}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  src="/images/my_dog.jpg"
+                  alt="My Dog"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    // Fallback if image doesn't exist
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `
-                        <div class="w-full h-full bg-gradient-to-br from-primary-600/30 to-indigo-600/30 flex items-center justify-center border-2 border-dashed border-primary-500/50 rounded-lg">
-                          <span class="text-gray-400 text-xs text-center px-2">Add about-${num}.jpg</span>
-                        </div>
-                      `;
-                    }
                   }}
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg"></div>
               </div>
-            ))}
+
+              {/* Skiing */}
+              <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                <img
+                  src="/images/skiing.jpeg"
+                  alt="Skiing"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg"></div>
+              </div>
+            </div>
           </div>
 
           {/* Activities & Experiences Section */}

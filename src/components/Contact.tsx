@@ -62,23 +62,20 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 bg-slate-900 border-t border-slate-700">
+    <section className="py-12 bg-slate-900/50 border-t border-slate-800">
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto">
-          {/* Section Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-3">
+        <div className="max-w-lg mx-auto">
+          {/* Section Title - Compact */}
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-2">
             Get In Touch
           </h2>
-          <p className="text-center text-gray-400 mb-8">
-            Have a question or want to work together? Send me a message!
+          <p className="text-center text-gray-400 text-sm mb-6">
+            Have a question? Send me a message
           </p>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Contact Form - Compact */}
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="contact-name" className="block text-gray-300 mb-2 font-medium">
-                Name
-              </label>
               <input
                 type="text"
                 id="contact-name"
@@ -86,15 +83,12 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-slate-800 border border-slate-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 placeholder-gray-500 transition-colors"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400/50 placeholder-gray-500 text-sm transition-all"
                 placeholder="Your Name"
               />
             </div>
             
             <div>
-              <label htmlFor="contact-email" className="block text-gray-300 mb-2 font-medium">
-                Email
-              </label>
               <input
                 type="email"
                 id="contact-email"
@@ -102,23 +96,20 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-slate-800 border border-slate-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 placeholder-gray-500 transition-colors"
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400/50 placeholder-gray-500 text-sm transition-all"
                 placeholder="your.email@example.com"
               />
             </div>
             
             <div>
-              <label htmlFor="contact-message" className="block text-gray-300 mb-2 font-medium">
-                Message
-              </label>
               <textarea
                 id="contact-message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={5}
-                className="w-full px-4 py-3 bg-slate-800 border border-slate-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 placeholder-gray-500 transition-colors resize-none"
+                rows={4}
+                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400/50 placeholder-gray-500 text-sm transition-all resize-none"
                 placeholder="Your message..."
               ></textarea>
             </div>
@@ -127,33 +118,32 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-5 py-2.5 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
 
-            {/* Status Messages */}
+            {/* Status Messages - Compact */}
             {submitStatus === 'success' && (
-              <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-center">
-                Message sent successfully! I'll get back to you soon.
+              <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-sm text-center">
+                Message sent! I'll get back to you soon.
               </div>
             )}
             {submitStatus === 'error' && (
-              <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-center">
-                Something went wrong. Please try again or email me directly at{' '}
-                <a href={`mailto:${personalInfo.email}`} className="underline hover:text-red-200">
+              <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
+                Error sending message. Email me at{' '}
+                <a href={`mailto:${personalInfo.email}`} className="underline hover:text-red-300">
                   {personalInfo.email}
                 </a>
               </div>
             )}
           </form>
 
-          {/* Direct Email Link */}
-          <div className="mt-8 text-center">
-            <p className="text-gray-400 mb-2">Or reach out directly:</p>
+          {/* Direct Email Link - Compact */}
+          <div className="mt-6 text-center">
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-primary-400 hover:text-primary-300 transition-colors font-medium"
+              className="text-primary-400 hover:text-primary-300 transition-colors text-sm"
             >
               {personalInfo.email}
             </a>

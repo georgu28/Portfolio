@@ -23,7 +23,7 @@ const Experience = () => {
 
           {/* Experience Timeline */}
           <div className="space-y-8">
-            {experiences.map((exp, index) => (
+            {experiences.map((exp) => (
               <div
                 key={exp.id}
                 className="relative pl-8 pb-8 border-l-2 border-primary-600/50 last:border-l-0 last:pb-0"

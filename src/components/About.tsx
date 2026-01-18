@@ -28,13 +28,13 @@ const About = () => {
             {/* Text Content - Left Side */}
             <div className="prose prose-invert max-w-none">
               <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                I am a student at the University of Michigan pursuing a Bachelor of Science in Computer Science and Engineering, with a strong interest in software engineering, artificial intelligence, and data driven systems.
+                Hi, I'm George, a student at the University of Michigan pursuing a Bachelor of Science in Computer Science and Engineering, with a strong interest in software engineering, artificial intelligence, and data driven systems.
               </p>
               <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                I am a driven learner who enjoys building practical technology with real world impact. I have worked on projects ranging from AI powered developer tooling and machine learning pipelines to full stack web applications and systems level coursework. Through internships, research teams, and personal projects, I have gained experience across Python, C and C++, TypeScript, and modern web and cloud technologies.
+                I'm a passionate learner who strives to build practical technology with real world impact. I've worked on projects ranging from AI powered developer tooling and machine learning pipelines to full stack web applications and systems level coursework. Through internships, research teams, and personal projects, I've gained experience across various tech stacks and modern web and cloud technologies.
               </p>
               <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                Outside of coding, I enjoy reading, skateboarding, and playing the guitar.
+                In my free time, you can find me exploring with friends, reading, skateboarding around campus, and playing my favorite songs on the guitar.
               </p>
             </div>
 

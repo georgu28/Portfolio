@@ -42,9 +42,9 @@ const About = () => {
             <div className="flex justify-center md:justify-end">
               <div className="relative">
                 <img
-                  src="/images/casual_headshot.jpg"
+                  src="/images/explore.jpg"
                   alt={personalInfo.name}
-                  className="w-full max-w-[280px] h-auto rounded-lg shadow-lg object-cover border-2 border-primary-400/50"
+                  className="w-full max-w-[340px] h-auto rounded-lg shadow-lg object-cover border-2 border-primary-400/50"
                   onError={(e) => {
                     // Fallback if image doesn't exist
                     const target = e.target as HTMLImageElement;
@@ -52,8 +52,8 @@ const About = () => {
                     const parent = target.parentElement;
                     if (parent) {
                       parent.innerHTML = `
-                        <div class="w-full max-w-[280px] h-64 bg-gradient-to-br from-primary-600/30 to-indigo-600/30 flex items-center justify-center border-2 border-dashed border-primary-500/50 rounded-lg">
-                          <span class="text-gray-400 text-center px-4 text-sm">Add casual_headshot.jpg</span>
+                        <div class="w-full max-w-[340px] h-64 bg-gradient-to-br from-primary-600/30 to-indigo-600/30 flex items-center justify-center border-2 border-dashed border-primary-500/50 rounded-lg">
+                          <span class="text-gray-400 text-center px-4 text-sm">Add explore.jpg</span>
                         </div>
                       `;
                     }
@@ -68,7 +68,7 @@ const About = () => {
           {/* Photo Gallery */}
           <div className="mb-16">
             <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-              {/* Golfing */}
+              {/* My Dog */}
               <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
                 <img
                   src="/images/my_dog.jpg"
@@ -85,8 +85,36 @@ const About = () => {
               {/* Skiing */}
               <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
                 <img
-                  src="/images/skiing.jpeg"
+                  src="/images/skiing.jpg"
                   alt="Skiing"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg"></div>
+              </div>
+
+              {/* Painting */}
+              <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                <img
+                  src="/images/painting.jpg"
+                  alt="Painting"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg"></div>
+              </div>
+
+              {/* Golf */}
+              <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                <img
+                  src="/images/golf.jpg"
+                  alt="Golf"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;

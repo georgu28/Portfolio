@@ -22,12 +22,15 @@ export interface Experience {
   description: string[];
   technologies: string[];
   type: string;
+  /** Optional: path to company logo in public/images (e.g. "Nexteer-Logo.jpg") */
+  logo?: string;
 }
 
 export const experiences: Experience[] = [
   {
     id: "capital-one",
     company: "Capital One",
+    logo: "Capital-One-Logo.jpg",
     position: "Incoming Technology Intern",
     location: "Richmond, Virginia, United States",
     startDate: "Nov 2025",
@@ -41,6 +44,7 @@ export const experiences: Experience[] = [
   {
     id: "nexteer",
     company: "Nexteer Automotive",
+    logo: "Nexteer-Logo.jpg",
     position: "Software Engineer",
     location: "Saginaw, Michigan, United States",
     startDate: "Jun 2025",
@@ -56,6 +60,7 @@ export const experiences: Experience[] = [
   {
     id: "villanova",
     company: "Villanova University",
+    logo: "Villanova-Logo.png",
     position: "Software & Data Engineer - First Author",
     location: "Remote",
     startDate: "Jun 2023",
@@ -72,6 +77,7 @@ export const experiences: Experience[] = [
   {
     id: "axia",
     company: "The AXIA Institute",
+    logo: "Axia-Lab-Logo.jpg",
     position: "Technical Research Assistant",
     location: "Remote",
     startDate: "Jun 2023",

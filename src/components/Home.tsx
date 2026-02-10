@@ -192,8 +192,18 @@ const Home = () => {
                       </div>
                     </div>
 
-                    {/* Spacer for alternating layout */}
-                    <div className="hidden md:block w-5/12"></div>
+                    {/* Logo on the other side of the description - sized to match card, centered next to timeline */}
+                    <div className={`hidden md:flex w-5/12 min-h-[320px] justify-center items-center ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
+                      {item.logo ? (
+                        <div className="w-64 h-64 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center p-4 overflow-hidden">
+                          <img
+                            src={`/images/${item.logo}`}
+                            alt={`${item.company} logo`}
+                            className="max-w-full max-h-full object-contain"
+                          />
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
                 );
               })}

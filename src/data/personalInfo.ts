@@ -10,6 +10,7 @@ export interface PersonalInfo {
   title: string;
   bio: string;
   email: string;
+  phone?: string;
   location: string;
   resumeUrl?: string; // Optional: link to your resume PDF
   socialLinks: {
@@ -25,7 +26,8 @@ export const personalInfo: PersonalInfo = {
   name: "George Gu",
   title: "Computer Science @ the University of Michigan, Ann Arbor",
   bio: "Hi, I'm an Undergraduate student in the University of Michigan pursuing a BSE in Computer Science. I have experience with machine learning, full-stack development and algorithms. I'm passionate about applying technology at a large scale to deliver sustainable solutions.",
-  email: "georgu@umich.edu", // Update with your actual email
+  email: "georgu@umich.edu",
+  phone: "989-948-8968",
   location: "Ann Arbor, Michigan, United States",
   resumeUrl: "", // Add your resume URL here if you have one hosted
   socialLinks: {

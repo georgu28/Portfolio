@@ -44,7 +44,7 @@ const About = () => {
                 <img
                   src="/images/explore.jpg"
                   alt={personalInfo.name}
-                  className="w-full max-w-[340px] h-auto rounded-lg shadow-lg object-cover border-2 border-primary-400/50"
+                  className="w-full max-w-[450px] h-auto rounded-lg shadow-lg object-cover border-2 border-primary-400/50"
                   onError={(e) => {
                     // Fallback if image doesn't exist
                     const target = e.target as HTMLImageElement;

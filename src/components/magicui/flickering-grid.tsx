@@ -1,13 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 interface FlickeringGridProps {
   squareSize?: number;
@@ -34,7 +28,8 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  // Default true so it animates immediately; the observer pauses it off-screen.
+  const isInViewRef = useRef(true);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
   const memoizedColor = useMemo(() => {
@@ -128,27 +123,15 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
     let gridParams = updateCanvasSize();
 
-    const prefersReducedMotion =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (prefersReducedMotion) {
-      drawGrid(
-        ctx,
-        canvas.width,
-        canvas.height,
-        gridParams.cols,
-        gridParams.rows,
-        gridParams.squares,
-        gridParams.dpr
-      );
-      return;
-    }
-
-    let lastTime = 0;
+    // One continuous loop: keeps scheduling, but only draws while on-screen.
+    let lastTime = performance.now();
     const animate = (time: number) => {
-      if (!isInView) return;
-      const deltaTime = (time - lastTime) / 1000;
+      animationFrameId = requestAnimationFrame(animate);
+      if (!isInViewRef.current) {
+        lastTime = time;
+        return;
+      }
+      const deltaTime = Math.min((time - lastTime) / 1000, 0.1);
       lastTime = time;
       updateSquares(gridParams.squares, deltaTime);
       drawGrid(
@@ -160,7 +143,6 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         gridParams.squares,
         gridParams.dpr
       );
-      animationFrameId = requestAnimationFrame(animate);
     };
 
     const resizeObserver = new ResizeObserver(() => {
@@ -169,21 +151,21 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     resizeObserver.observe(container);
 
     const intersectionObserver = new IntersectionObserver(
-      ([entry]) => setIsInView(entry.isIntersecting),
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+      },
       { threshold: 0 }
     );
     intersectionObserver.observe(canvas);
 
-    if (isInView) {
-      animationFrameId = requestAnimationFrame(animate);
-    }
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [setupCanvas, updateSquares, drawGrid, width, height, isInView]);
+  }, [setupCanvas, updateSquares, drawGrid, width, height]);
 
   return (
     <div ref={containerRef} className={cn("h-full w-full", className)}>

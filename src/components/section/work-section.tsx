@@ -5,17 +5,19 @@ import { TechTag } from "@/components/tech-tag";
 export default function WorkSection() {
   return (
     <div className="grid gap-4">
-      {DATA.work.map((work) => (
+      {DATA.work.map((work) => {
+        const logoUrl: string = work.logoUrl;
+        return (
         <article
           key={work.company}
           className="rounded-xl border border-border bg-card p-5 sm:p-6"
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
-              {work.logoUrl ? (
+              {logoUrl ? (
                 <span className="flex size-10 flex-none items-center justify-center overflow-hidden rounded-lg border border-border bg-background">
                   <Image
-                    src={work.logoUrl}
+                    src={logoUrl}
                     alt={`${work.company} logo`}
                     width={40}
                     height={40}
@@ -76,7 +78,8 @@ export default function WorkSection() {
             ))}
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   );
 }

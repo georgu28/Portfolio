@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Globe, Mail } from "lucide-react";
 import { DATA } from "@/data/resume";
+import { SkillIcon } from "@/components/skill-icon";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import WorkSection from "@/components/section/work-section";
 import ProjectsSection from "@/components/section/projects-section";
@@ -14,7 +15,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 const skillPill =
-  "inline-flex h-8 items-center rounded-xl border border-border bg-background px-4 text-sm font-medium text-foreground ring-2 ring-border/20";
+  "inline-flex h-8 items-center gap-2 rounded-xl border border-border bg-background px-4 text-sm font-medium text-foreground ring-2 ring-border/20";
 
 export default function Page() {
   const { publication: pub, contact } = DATA;
@@ -86,6 +87,7 @@ export default function Page() {
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span key={item} className={skillPill}>
+                    <SkillIcon name={item} className="size-4" />
                     {item}
                   </span>
                 ))}
@@ -164,8 +166,8 @@ export default function Page() {
             className="h-full w-full [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
             squareSize={2}
             gridGap={4}
-            flickerChance={0.22}
-            maxOpacity={0.2}
+            flickerChance={0.45}
+            maxOpacity={0.32}
             color="rgb(120,120,120)"
           />
         </div>

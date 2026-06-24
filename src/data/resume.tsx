@@ -8,11 +8,11 @@ export const DATA = {
   headshotUrl: "/images/headshot1.jpg", // alt available: /images/headshot2.jpg
   tagline: "CS @ Michigan · ML/SWE · prev Capital One & Nexteer", // metadata/OG only
   greeting: "Hi, I'm George",
-  bio: "CS and ML student and Software Engineer at the University of Michigan. I build scalable systems and ship real products and features.",
+  bio: "CS and ML student at the University of Michigan. I build scalable systems and ship real products and features.",
   about:
-    "I'm George — a CS student at the University of Michigan focused on exploring applications of machine learning and building systems that actually ship. I've built production systems as a founding engineer, interned in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm into philosophy, game design, skateboarding, guitar, and calisthenics.",
+    "I'm a Computer Science student at the University of Michigan. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, skateboarding, guitar, and bouldering.",
   intro: {
-    experience: "Where I've shipped — building and scaling production systems.",
+    experience: "Building and scaling production systems.",
     projects: "A mix of systems, ML, and full-stack work. Here are a few I'm proud of.",
   },
 
@@ -44,7 +44,7 @@ export const DATA = {
       title: "Founding Engineer · Contract",
       start: "Jan 2026",
       end: "Present",
-      logoUrl: "", // no logo asset — monogram fallback
+      logoUrl: "/images/BoilerVault_Logo.jpg",
       impact: { value: "2,000+", label: "records migrated" },
       highlights: [
         "Migrated 2,000+ legacy records via three-tier fuzzy matching — now the production system of record on Railway/Vercel.",

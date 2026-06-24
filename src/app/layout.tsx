@@ -79,8 +79,8 @@ export default function RootLayout({
                 className="h-full w-full"
                 squareSize={2}
                 gridGap={4}
-                flickerChance={0.22}
-                maxOpacity={0.2}
+                flickerChance={0.45}
+                maxOpacity={0.32}
                 color="rgb(120,120,120)"
               />
             </div>

@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Github, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TechTag } from "@/components/tech-tag";
+import { ZoomableImage } from "@/components/zoomable-image";
 
 interface ProjectLink {
   type: string;
@@ -54,12 +54,12 @@ export function ProjectCard({
             imageFit === "contain" && "bg-muted/40"
           )}
         >
-          <Image
+          <ZoomableImage
             src={image}
             alt={`${title} ${imageLabel || "preview"}`}
             width={1200}
             height={620}
-            className={cn(
+            imgClassName={cn(
               "h-48 w-full",
               imageFit === "contain"
                 ? "object-contain p-3"

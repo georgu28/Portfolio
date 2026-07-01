@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { DATA } from "@/data/resume";
 import { TechTag } from "@/components/tech-tag";
+import { ZoomableImage } from "@/components/zoomable-image";
 
 export default function WorkSection() {
   return (
@@ -62,12 +63,12 @@ export default function WorkSection() {
 
           {work.image ? (
             <div className="mt-4 overflow-hidden rounded-lg border border-border">
-              <Image
+              <ZoomableImage
                 src={work.image}
                 alt={`${work.company} platform screenshot`}
                 width={1200}
                 height={620}
-                className="h-44 w-full object-cover object-top sm:h-52"
+                imgClassName="h-44 w-full object-cover object-top sm:h-52"
               />
             </div>
           ) : null}

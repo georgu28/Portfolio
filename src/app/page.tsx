@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Globe, Mail } from "lucide-react";
 import { DATA } from "@/data/resume";
 import { SkillIcon } from "@/components/skill-icon";
+import { ZoomableImage } from "@/components/zoomable-image";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import WorkSection from "@/components/section/work-section";
 import ProjectsSection from "@/components/section/projects-section";
@@ -36,13 +36,14 @@ export default function Page() {
           </p>
         </div>
 
-        <Image
+        <ZoomableImage
           src={DATA.headshotUrl}
           alt={DATA.name}
           width={224}
           height={224}
           priority
-          className="size-24 flex-none rounded-2xl border border-border object-cover shadow-sm sm:size-32"
+          className="size-24 flex-none sm:size-32"
+          imgClassName="size-full rounded-2xl border border-border object-cover shadow-sm"
         />
       </section>
 

@@ -10,7 +10,7 @@ export const DATA = {
   greeting: "Hi, I'm George",
   bio: "CS and ML student at the University of Michigan. I build scalable systems and ship real products and features.",
   about:
-    "I'm an M.S. Computer Science student (Machine Learning) at the University of Michigan. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
+    "I'm a Computer Science student at the University of Michigan, finishing my B.S.E. with an intended M.S. in Machine Learning. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
   intro: {
     experience: "Building and scaling production systems.",
     projects: "A mix of systems, ML, and full-stack work. Here are a few I'm proud of.",
@@ -32,7 +32,7 @@ export const DATA = {
       logoUrl: "/images/Capital-One-Logo.jpg",
       impact: { value: "91%", label: "test coverage" },
       highlights: [
-        "Authored 20+ integration tests covering mock DB transactions, cross-region failures, and timeout edge cases — lifting compliance-service coverage to 91%.",
+        "Authored 20+ integration tests covering mock DB transactions, cross-region failures, and timeout edge cases, lifting compliance-service coverage to 91%.",
         "Architected AWS Lambda pipelines ingesting daily asset-management snapshots to train predictive models on application lifecycle and business criticality.",
         "Built Python REST APIs for data-attestation and compliance workflows, secured with parameterized PostgreSQL queries and role-based access control.",
       ],
@@ -47,7 +47,7 @@ export const DATA = {
       logoUrl: "/images/BoilerVault_Logo.jpg",
       impact: { value: "$130K+", label: "revenue reconciled, 0 manual entry" },
       highlights: [
-        "Reconciled out-of-order payment events across 4 Stripe accounts and 3 WordPress booking sites via idempotent webhooks — $130K+ gross revenue, 0 manual entry.",
+        "Reconciled out-of-order payment events across 4 Stripe accounts and 3 WordPress booking sites via idempotent webhooks, processing $130K+ gross revenue with 0 manual entry.",
         "Built a multi-tenant ops platform (FastAPI, PostgreSQL, Next.js/TypeScript) for a 3-campus storage business with JWT auth, RBAC, 20+ endpoints, and 140+ tests.",
         "Migrated 2,000+ legacy records via three-tier matching (exact email → fuzzy name → Stripe charge fallback), replacing a failing Zapier workflow as the new production system of record on Railway/Vercel.",
       ],
@@ -77,10 +77,10 @@ export const DATA = {
       dates: "Jan 2026 - Apr 2026",
       impact: { value: "0.97", label: "validation AUROC" },
       description:
-        "Built and compared a CNN and a Vision Transformer implemented from scratch in PyTorch (patch-to-token projection, a learnable [CLS] token, sinusoidal positional embeddings, multi-head self-attention) for dog-breed image classification. A 2-stage source/target transfer-learning pipeline pretrains on a 10-class breed task, then fine-tunes a frozen convolutional backbone on a binary target task — sweeping augmentation intensity across 4 levels and tuning early-stopping patience on validation AUROC to correct overfitting, reaching 0.93 accuracy and 0.97 AUROC.",
+        "Built and compared a CNN and a Vision Transformer implemented from scratch in PyTorch (patch-to-token projection, a learnable [CLS] token, sinusoidal positional embeddings, multi-head self-attention) for dog-breed image classification. A 2-stage source/target transfer-learning pipeline pretrains on a 10-class breed task, then fine-tunes a frozen convolutional backbone on a binary target task, sweeping augmentation intensity across 4 levels and tuning early-stopping patience on validation AUROC to correct overfitting, reaching 0.93 accuracy and 0.97 AUROC.",
       tags: ["PyTorch", "CNN", "Vision Transformer", "Transfer Learning"],
       image: "/images/ImageClassifcation.png",
-      imageFit: "contain", // preprocessing comparison figure — show in full, don't crop
+      imageFit: "contain", // preprocessing comparison figure, show in full, don't crop
       imageLabel: "Preprocessing",
       links: [],
     },
@@ -92,7 +92,7 @@ export const DATA = {
         "A MapReduce pipeline builds a TF-IDF inverted index over 3,000+ Wikipedia documents. A Flask REST index server scores queries with PageRank-weighted cosine similarity across 3 partitioned index segments. A concurrent, service-oriented search frontend dispatches threaded requests to each segment and merges the ranked results. Segments and index servers scale independently for horizontal scalability.",
       tags: ["Python", "MapReduce", "Flask", "TF-IDF", "PageRank"],
       image: "/images/MapReduceArchitecture.jpg",
-      imageFit: "contain", // architecture diagram — show in full, don't crop
+      imageFit: "contain", // architecture diagram, show in full, don't crop
       imageLabel: "Architecture",
       links: [], // private repo: no code link
     },
@@ -108,7 +108,7 @@ export const DATA = {
       imageLabel: "",
       links: [
         { type: "Source", href: "https://github.com/georgu28/MDST-Resume-Screener" },
-        // Live demo placeholder — George will add the URL on redeploy.
+        // Live demo placeholder, George will add the URL on redeploy.
         // Previous Streamlit URL (currently down): https://mdst-resume-screener-bhaqj64tyfxtp3ekp4qxz6.streamlit.app/
         { type: "Demo", href: "https://mdst-resume-screener-bhaqj64tyfxtp3ekp4qxz6.streamlit.app/" },
       ],

@@ -125,7 +125,7 @@ export function ProjectCard({
                 rel="noopener noreferrer"
                 title={
                   link.type === "Demo"
-                    ? "Hosted on Streamlit — may take a few seconds to wake if it's been idle"
+                    ? "Hosted on Streamlit, may take a few seconds to wake if it's been idle"
                     : undefined
                 }
                 className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-xs font-medium transition-colors hover:border-foreground/30 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -141,7 +141,7 @@ export function ProjectCard({
                 className="inline-flex cursor-default items-center gap-1.5 rounded-md border border-dashed border-border bg-muted/40 px-3 py-1.5 text-xs font-medium text-muted-foreground"
               >
                 <Globe className="size-3.5" />
-                Live demo — coming soon
+                Live demo, coming soon
               </span>
             ))}
           </div>

@@ -55,7 +55,7 @@ export default function Page() {
         </p>
       </section>
 
-      {/* Experience — strongest content, first */}
+      {/* Experience: strongest content, first */}
       <section id="work">
         <SectionLabel>Experience</SectionLabel>
         <p className="mb-5 mt-2 text-sm text-muted-foreground">

@@ -101,21 +101,24 @@ export default function Page() {
       {/* Education */}
       <section id="education">
         <SectionLabel>Education</SectionLabel>
-        <div className="mt-5 flex items-start justify-between gap-4 rounded-xl border border-border bg-card p-5 sm:p-6">
-          <div>
-            <h3 className="font-semibold leading-tight">
-              {DATA.education.school}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {DATA.education.degree}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {DATA.education.detail}
-            </p>
-          </div>
-          <p className="flex-none text-xs tabular-nums text-muted-foreground sm:text-sm">
-            {DATA.education.start} – {DATA.education.end}
-          </p>
+        <div className="mt-5 grid gap-4">
+          {DATA.education.map((edu) => (
+            <div
+              key={edu.degree}
+              className="flex items-start justify-between gap-4 rounded-xl border border-border bg-card p-5 sm:p-6"
+            >
+              <div>
+                <h3 className="font-semibold leading-tight">{edu.school}</h3>
+                <p className="text-sm text-muted-foreground">{edu.degree}</p>
+                {edu.detail ? (
+                  <p className="text-sm text-muted-foreground">{edu.detail}</p>
+                ) : null}
+              </div>
+              <p className="flex-none text-xs tabular-nums text-muted-foreground sm:text-sm">
+                {edu.start} – {edu.end}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 

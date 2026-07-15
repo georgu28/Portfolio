@@ -10,7 +10,7 @@ export const DATA = {
   greeting: "Hi, I'm George",
   bio: "CS and ML student at the University of Michigan. I build scalable systems and ship real products and features.",
   about:
-    "I'm a Computer Science student at the University of Michigan. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, skateboarding, guitar, and bouldering.",
+    "I'm an M.S. Computer Science student (Machine Learning) at the University of Michigan. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
   intro: {
     experience: "Building and scaling production systems.",
     projects: "A mix of systems, ML, and full-stack work. Here are a few I'm proud of.",
@@ -32,9 +32,9 @@ export const DATA = {
       logoUrl: "/images/Capital-One-Logo.jpg",
       impact: { value: "91%", label: "test coverage" },
       highlights: [
-        "Authored 20+ integration tests, lifting service coverage to 91%.",
-        "Architected AWS Lambda data pipelines feeding predictive models.",
-        "Built Python REST APIs with RBAC and parameterized PostgreSQL queries.",
+        "Authored 20+ integration tests covering mock DB transactions, cross-region failures, and timeout edge cases — lifting compliance-service coverage to 91%.",
+        "Architected AWS Lambda pipelines ingesting daily asset-management snapshots to train predictive models on application lifecycle and business criticality.",
+        "Built Python REST APIs for data-attestation and compliance workflows, secured with parameterized PostgreSQL queries and role-based access control.",
       ],
       tags: ["AWS Lambda", "Python", "PostgreSQL", "REST", "RBAC"],
       image: "",
@@ -45,11 +45,11 @@ export const DATA = {
       start: "Jan 2026",
       end: "Present",
       logoUrl: "/images/BoilerVault_Logo.jpg",
-      impact: { value: "2,000+", label: "records migrated" },
+      impact: { value: "$130K+", label: "revenue reconciled, 0 manual entry" },
       highlights: [
-        "Migrated 2,000+ legacy records via three-tier fuzzy matching — now the production system of record on Railway/Vercel.",
+        "Reconciled out-of-order payment events across 4 Stripe accounts and 3 WordPress booking sites via idempotent webhooks — $130K+ gross revenue, 0 manual entry.",
         "Built a multi-tenant ops platform (FastAPI, PostgreSQL, Next.js/TypeScript) for a 3-campus storage business with JWT auth, RBAC, 20+ endpoints, and 140+ tests.",
-        "Engineered idempotent Stripe webhook reconciliation across 4 accounts and 3 booking sites.",
+        "Migrated 2,000+ legacy records via three-tier matching (exact email → fuzzy name → Stripe charge fallback), replacing a failing Zapier workflow as the new production system of record on Railway/Vercel.",
       ],
       tags: ["FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe"],
       image: "/images/BoilerVault_SS.jpg",
@@ -62,16 +62,28 @@ export const DATA = {
       logoUrl: "/images/Nexteer-Logo.jpg",
       impact: { value: "87.5%", label: "less code-review time" },
       highlights: [
-        "Deployed an LLM-powered IDE extension across 26 sites, cutting code-review time by 87.5%.",
-        "Built the extension (Python/TypeScript) to parse 300+ engineering guidelines for automated compliance checks.",
-        "Tuned prompt pipelines to 95% violation-detection accuracy.",
+        "Deployed an LLM-powered IDE extension across 26 sites, cutting code-review time by 87.5% for safety-critical embedded steering systems.",
+        "Built the extension (Python/TypeScript, Azure AI + Copilot APIs) to parse 300+ engineering guidelines and automate compliance checks across C/H files.",
+        "Tuned prompt pipelines and few-shot strategies to 95% violation-detection accuracy, saving engineers ~8 hours of review per week.",
       ],
-      tags: ["Python", "TypeScript", "LLM", "Prompt Engineering"],
+      tags: ["Python", "TypeScript", "Azure AI", "LLM", "Prompt Engineering"],
       image: "",
     },
   ],
 
   projects: [
+    {
+      title: "Image Classification & Transfer Learning",
+      dates: "Jan 2026 - Apr 2026",
+      impact: { value: "0.97", label: "validation AUROC" },
+      description:
+        "Built and compared a CNN and a Vision Transformer implemented from scratch in PyTorch (patch-to-token projection, a learnable [CLS] token, sinusoidal positional embeddings, multi-head self-attention) for dog-breed image classification. A 2-stage source/target transfer-learning pipeline pretrains on a 10-class breed task, then fine-tunes a frozen convolutional backbone on a binary target task — sweeping augmentation intensity across 4 levels and tuning early-stopping patience on validation AUROC to correct overfitting, reaching 0.93 accuracy and 0.97 AUROC.",
+      tags: ["PyTorch", "CNN", "Vision Transformer", "Transfer Learning"],
+      image: "/images/ImageClassifcation.png",
+      imageFit: "contain", // preprocessing comparison figure — show in full, don't crop
+      imageLabel: "Preprocessing",
+      links: [],
+    },
     {
       title: "Scalable Search Engine",
       dates: "Jan 2026 - Apr 2026",
@@ -103,24 +115,33 @@ export const DATA = {
     },
   ],
 
-  education: {
-    school: "University of Michigan",
-    degree: "B.S.E. Computer Science",
-    detail: "GPA 3.81",
-    start: "2024",
-    end: "May 2028",
-  },
+  education: [
+    {
+      school: "University of Michigan",
+      degree: "M.S. Computer Science, Machine Learning",
+      detail: "",
+      start: "2027",
+      end: "May 2028 (Expected)",
+    },
+    {
+      school: "University of Michigan",
+      degree: "B.S.E. Computer Science",
+      detail: "GPA 3.81",
+      start: "2024",
+      end: "May 2027",
+    },
+  ],
 
   skills: [
     {
       group: "Languages",
-      items: ["Python", "C/C++", "Java", "SQL", "TypeScript/JavaScript"],
+      items: ["Python", "C/C++", "Java", "SQL", "TypeScript/JavaScript", "HTML/CSS"],
     },
     {
       group: "ML & Frameworks",
       items: ["PyTorch", "TensorFlow", "scikit-learn", "React", "Flask", "Node.js"],
     },
-    { group: "Tools", items: ["Git", "Linux"] },
+    { group: "Tools", items: ["Git", "Docker", "Kubernetes", "PostgreSQL", "Unix"] },
   ],
 
   publication: {

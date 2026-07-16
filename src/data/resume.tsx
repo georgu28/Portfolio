@@ -10,7 +10,7 @@ export const DATA = {
   greeting: "Hi, I'm George",
   bio: "CS and ML student at the University of Michigan. I build scalable systems and ship real products and features.",
   about:
-    "I'm a Computer Science student at the University of Michigan, finishing my B.S.E. with an intended M.S. in Computer Science with a concentration on Machine Learning. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
+    "I'm a Computer Science student at the University of Michigan, working toward my B.S.E. with a focus on Machine Learning. I love exploring applications of machine learning and building scalable systems. I've built production systems as a founding engineer, worked in bank tech, shipped an LLM tool deployed across 26 sites, and published first-author research. Outside of code, I'm interested in philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
   intro: {
     experience: "Building and scaling production systems.",
     projects: "A mix of systems, ML, and full-stack work. Here are a few I'm proud of.",
@@ -118,17 +118,10 @@ export const DATA = {
   education: [
     {
       school: "University of Michigan",
-      degree: "M.S. Computer Science, Machine Learning",
-      detail: "",
-      start: "2027",
-      end: "May 2028 (Expected)",
-    },
-    {
-      school: "University of Michigan",
       degree: "B.S.E. Computer Science",
       detail: "GPA 3.81",
       start: "2024",
-      end: "May 2027",
+      end: "May 2028 (Expected)",
     },
   ],
 

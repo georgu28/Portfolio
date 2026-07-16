@@ -121,7 +121,7 @@ export const DATA = {
       degree: "B.S.E. Computer Science",
       detail: "GPA 3.81",
       start: "2024",
-      end: "May 2028 (Expected)",
+      end: "May 2028",
     },
   ],
 

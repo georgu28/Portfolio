@@ -33,13 +33,13 @@ export const DATA = {
       start: "Jun 2026",
       end: "Aug 2026",
       logoUrl: "/images/Capital-One-Logo.jpg",
-      impact: { value: "91%", label: "test coverage" },
+      impact: { value: "98%", label: "coverage vs 80% gate" },
       highlights: [
-        "Authored 20+ integration tests covering mock DB transactions, cross-region failures, and timeout edge cases, lifting compliance-service coverage to 91%.",
-        "Architected AWS Lambda pipelines ingesting daily asset-management snapshots to train predictive models on application lifecycle and business criticality.",
-        "Built Python REST APIs for data-attestation and compliance workflows, secured with parameterized PostgreSQL queries and role-based access control.",
+        "Built the PUT /certify-asset endpoint (one of 44 REST endpoints) behind a three-tier authorization model, shipping it with React badge components to production at 98% coverage against an 80% gate.",
+        "Architected 2 AWS EventBridge-scheduled Python Lambdas: a daily certification-reminder digest querying PostgreSQL views to email owners, and a ServiceNow reconciliation pipeline uploading encrypted CMDB reports to S3.",
+        "Authored idempotent Flyway PostgreSQL migrations building a ServiceNow CMDB caching layer (2 tables, 2 views, 2 indexes) within a 52-migration schema history, optimizing cross-table SQL for automated compliance reporting.",
       ],
-      tags: ["AWS Lambda", "Python", "PostgreSQL", "REST", "RBAC"],
+      tags: ["AWS Lambda", "EventBridge", "Python", "PostgreSQL", "React"],
       image: "",
     },
     {

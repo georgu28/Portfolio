@@ -29,7 +29,7 @@ export const DATA = {
   work: [
     {
       company: "Capital One",
-      title: "Technology Intern",
+      title: "Software Engineer Intern",
       start: "Jun 2026",
       end: "Aug 2026",
       logoUrl: "/images/Capital-One-Logo.jpg",

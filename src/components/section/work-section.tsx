@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Globe } from "lucide-react";
 import { DATA } from "@/data/resume";
 import { TechTag } from "@/components/tech-tag";
 import { ZoomableImage } from "@/components/zoomable-image";
@@ -78,6 +80,23 @@ export default function WorkSection() {
               <TechTag key={tag}>{tag}</TechTag>
             ))}
           </div>
+
+          {work.links.length ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {work.links.map((link) => (
+                <Link
+                  key={link.type}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-xs font-medium transition-colors hover:border-foreground/30 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <Globe className="size-3.5" />
+                  Live Demo
+                </Link>
+              ))}
+            </div>
+          ) : null}
         </article>
         );
       })}

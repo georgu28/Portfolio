@@ -41,6 +41,7 @@ export const DATA = {
       ],
       tags: ["AWS Lambda", "EventBridge", "Python", "PostgreSQL", "React"],
       image: "",
+      links: [],
     },
     {
       company: "BoilerVault",
@@ -56,6 +57,9 @@ export const DATA = {
       ],
       tags: ["FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe"],
       image: "/images/BoilerVault_SS.jpg",
+      links: [
+        { type: "Demo", href: "https://boilervault-ops-public-demo.vercel.app" },
+      ],
     },
     {
       company: "Nexteer Automotive",
@@ -71,6 +75,7 @@ export const DATA = {
       ],
       tags: ["Python", "TypeScript", "Azure AI", "LLM", "Prompt Engineering"],
       image: "",
+      links: [],
     },
   ],
 

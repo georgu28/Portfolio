@@ -38,8 +38,9 @@ export const DATA = {
         "Built the PUT /certify-asset endpoint (one of 44 REST endpoints) behind a three-tier authorization model, shipping it with React badge components to production at 98% coverage against an 80% gate.",
         "Architected 2 AWS EventBridge-scheduled Python Lambdas: a daily certification-reminder digest querying PostgreSQL views to email owners, and a ServiceNow reconciliation pipeline uploading encrypted CMDB reports to S3.",
         "Authored idempotent Flyway PostgreSQL migrations building a ServiceNow CMDB caching layer (2 tables, 2 views, 2 indexes) within a 52-migration schema history, optimizing cross-table SQL for automated compliance reporting.",
+        "Configured CI/CD across dev, QA, and prod with Jenkins pipelines, IAM roles, and CloudFormation stacks.",
       ],
-      tags: ["AWS Lambda", "EventBridge", "Python", "PostgreSQL", "React"],
+      tags: ["AWS Lambda", "EventBridge", "Python", "PostgreSQL", "React", "Jenkins"],
       image: "",
       links: [],
     },
@@ -52,7 +53,7 @@ export const DATA = {
       impact: { value: "$130K+", label: "revenue reconciled, 0 manual entry" },
       highlights: [
         "Reconciled out-of-order payment events across 4 Stripe accounts and 3 WordPress booking sites via idempotent webhooks, processing $130K+ gross revenue with 0 manual entry.",
-        "Built a multi-tenant ops platform (FastAPI, PostgreSQL, Next.js/TypeScript) for a 3-campus storage business with JWT auth, RBAC, 20+ endpoints, and 140+ tests.",
+        "Built a multi-tenant ops platform (FastAPI, PostgreSQL, Next.js/TypeScript) for a 3-campus storage business with JWT auth, RBAC, 20+ endpoints, and a 318-test backend suite.",
         "Migrated 2,000+ legacy records via three-tier matching (exact email → fuzzy name → Stripe charge fallback), replacing a failing Zapier workflow as the new production system of record on Railway/Vercel.",
       ],
       tags: ["FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe"],
@@ -80,6 +81,18 @@ export const DATA = {
   ],
 
   projects: [
+    {
+      title: "MeloChron",
+      dates: "Jul 2026 - Aug 2026",
+      impact: { value: "0.452", label: "PR-AUC vs. 0.421 baseline" },
+      description:
+        "A causal self-attention encoder (2 transformer blocks, 2 heads, width 128) summarizes a listener's 100 most recent plays with inter-play time gaps, feeding a 468K-parameter 2-layer MLP that predicts whether a listener voluntarily returns to a newly heard track — a cleaner taste signal than shuffle-driven next-plays. Frozen 50-dim audio embeddings projected to 128 dims represent track content. Trained in PyTorch on a cloud RTX 4090, cutting a multi-day run to hours while scaling training data 7x. Iterated past a strong running-rate baseline (0.421 PR-AUC) to 0.452, a statistically significant gain (95% CI +0.023 to +0.039) confirmed by a listener-level paired bootstrap test over 100,000 evaluated listeners.",
+      tags: ["PyTorch", "Transformers", "Self-Attention", "Recommender Systems", "Audio Embeddings"],
+      image: "/images/MeloChron_SS.png",
+      imageFit: "contain", // architecture diagram, show in full, don't crop
+      imageLabel: "Architecture",
+      links: [{ type: "Demo", href: "https://melochron.vercel.app/" }],
+    },
     {
       title: "Image Classification & Transfer Learning",
       dates: "Jan 2026 - Apr 2026",
@@ -142,7 +155,7 @@ export const DATA = {
       group: "ML & Frameworks",
       items: ["PyTorch", "TensorFlow", "scikit-learn", "React", "Flask", "Node.js"],
     },
-    { group: "Tools", items: ["Git", "Docker", "Kubernetes", "PostgreSQL", "Unix"] },
+    { group: "Tools", items: ["Git", "Docker", "AWS", "Kubernetes", "PostgreSQL", "Unix"] },
   ],
 
   publication: {

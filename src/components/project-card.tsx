@@ -124,7 +124,7 @@ export function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 title={
-                  link.type === "Demo"
+                  link.type === "Demo" && link.href.includes("streamlit.app")
                     ? "Hosted on Streamlit, may take a few seconds to wake if it's been idle"
                     : undefined
                 }

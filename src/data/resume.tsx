@@ -8,7 +8,7 @@ export const DATA = {
   headshotUrl: "/images/headshot1.jpg", // alt available: /images/headshot2.jpg
   tagline: "CS @ Michigan · ML/SWE · prev Capital One & Nexteer", // metadata/OG only
   greeting: "Hi, I'm George",
-  bio: "CS and ML student at the University of Michigan. I build scalable systems and ship real products and features.",
+  bio: "CS student at the University of Michigan. I build scalable systems and ship real products and features.",
   about:
     "I'm an undergraduate student in the University of Michigan pursing a BSE in Computer Science. \
     I'm passionate about applying technology to deliver scalable impact. \
@@ -33,10 +33,10 @@ export const DATA = {
       start: "Jun 2026",
       end: "Aug 2026",
       logoUrl: "/images/Capital-One-Logo.jpg",
-      impact: { value: "98%", label: "coverage vs 80% gate" },
+      impact: { value: "8 months", label: "of data staleness eliminated" },
       highlights: [
-        "Built the PUT /certify-asset endpoint (one of 44 REST endpoints) behind a three-tier authorization model, shipping it with React badge components to production at 98% coverage against an 80% gate.",
-        "Architected 2 AWS EventBridge-scheduled Python Lambdas: a daily certification-reminder digest querying PostgreSQL views to email owners, and a ServiceNow reconciliation pipeline uploading encrypted CMDB reports to S3.",
+        "Delivered an end-to-end production asset-certification feature, replacing manual outreach across 2,000+ assets with the PUT /certify-asset endpoint (one of 44 REST endpoints) behind a three-tier authorization model, shipped with React badge components at 98% coverage against an 80% gate.",
+        "Architected 2 AWS EventBridge-scheduled Python Lambdas running daily — a certification-reminder digest querying PostgreSQL views to email owners, and a ServiceNow CMDB reconciliation pipeline uploading encrypted reports to S3 — eliminating up to 8 months of data staleness from a prior one-time load.",
         "Authored idempotent Flyway PostgreSQL migrations building a ServiceNow CMDB caching layer (2 tables, 2 views, 2 indexes) within a 52-migration schema history, optimizing cross-table SQL for automated compliance reporting.",
         "Configured CI/CD across dev, QA, and prod with Jenkins pipelines, IAM roles, and CloudFormation stacks.",
       ],
@@ -45,16 +45,17 @@ export const DATA = {
       links: [],
     },
     {
-      company: "BoilerVault",
+      company: "BoilerVault Storage LLC",
       title: "Founding Engineer · Contract",
       start: "Jan 2026",
-      end: "Present",
+      end: "Jun 2026",
       logoUrl: "/images/BoilerVault_Logo.jpg",
       impact: { value: "$130K+", label: "revenue reconciled, 0 manual entry" },
       highlights: [
         "Reconciled out-of-order payment events across 4 Stripe accounts and 3 WordPress booking sites via idempotent webhooks, processing $130K+ gross revenue with 0 manual entry.",
+        "Automated unmatched-charge reconciliation, saving 3+ hours of manual work per week by parking charges in an idempotent table and sweeping oldest-first once booking records land.",
         "Built a multi-tenant ops platform (FastAPI, PostgreSQL, Next.js/TypeScript) for a 3-campus storage business with JWT auth, RBAC, 20+ endpoints, and a 318-test backend suite.",
-        "Migrated 2,000+ legacy records via three-tier matching (exact email → fuzzy name → Stripe charge fallback), replacing a failing Zapier workflow as the new production system of record on Railway/Vercel.",
+        "Migrated 475 legacy bookings into 2,000+ records across 5 tables via three-tier matching (exact email → fuzzy name → Stripe charge fallback), replacing a failing Zapier Google Sheets workflow as the new production system of record on Railway/Vercel.",
       ],
       tags: ["FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe"],
       image: "/images/BoilerVault_SS.jpg",
@@ -78,15 +79,30 @@ export const DATA = {
       image: "",
       links: [],
     },
+    {
+      company: "Villanova University",
+      title: "Data Engineer",
+      start: "Jun 2023",
+      end: "Sep 2023",
+      logoUrl: "", // no logo asset; card falls back to "VI" initials
+      impact: { value: "28,000+", label: "pathogen isolates analyzed" },
+      highlights: [
+        "Engineered end-to-end data pipelines in R over 28,000+ pathogen isolates spanning 10+ years, applying PCA and clustering to surface essential detection trends.",
+        "Published the analysis as first author in Antibiotics (2023).",
+      ],
+      tags: ["R", "PCA", "Clustering", "Data Pipelines"],
+      image: "",
+      links: [],
+    },
   ],
 
   projects: [
     {
       title: "MeloChron",
       dates: "Jul 2026 - Aug 2026",
-      impact: { value: "0.452", label: "PR-AUC vs. 0.421 baseline" },
+      impact: { value: "0.482", label: "PR-AUC vs. 0.421 baseline" },
       description:
-        "A causal self-attention encoder (2 transformer blocks, 2 heads, width 128) summarizes a listener's 100 most recent plays with inter-play time gaps, feeding a 468K-parameter 2-layer MLP that predicts whether a listener voluntarily returns to a newly heard track — a cleaner taste signal than shuffle-driven next-plays. Frozen 50-dim audio embeddings projected to 128 dims represent track content. Trained in PyTorch on a cloud RTX 4090, cutting a multi-day run to hours while scaling training data 7x. Iterated past a strong running-rate baseline (0.421 PR-AUC) to 0.452, a statistically significant gain (95% CI +0.023 to +0.039) confirmed by a listener-level paired bootstrap test over 100,000 evaluated listeners.",
+        "A causal self-attention encoder (2 transformer blocks, 2 heads, width 128) summarizes a listener's 100 most recent plays with inter-play time gaps, feeding a 468K-parameter 2-layer MLP that predicts whether a listener voluntarily returns to a newly heard track — a cleaner taste signal than shuffle-driven next-plays. Frozen 50-dim audio embeddings projected to 128 dims represent track content. Trained in PyTorch on a cloud RTX 4090, cutting a multi-day run to hours while scaling training data 7x. Iterated past a strong running-rate baseline (0.421 PR-AUC) to an audio-content model at 0.482, a statistically significant gain confirmed by a listener-level paired bootstrap test over 100,000 evaluated listeners.",
       tags: ["PyTorch", "Transformers", "Self-Attention", "Recommender Systems", "Audio Embeddings"],
       image: "/images/MeloChron_SS.png",
       imageFit: "contain", // architecture diagram, show in full, don't crop
@@ -110,7 +126,7 @@ export const DATA = {
       dates: "Jan 2026 - Apr 2026",
       impact: { value: "3,000+", label: "Wikipedia docs indexed" },
       description:
-        "A MapReduce pipeline builds a TF-IDF inverted index over 3,000+ Wikipedia documents. A Flask REST index server scores queries with PageRank-weighted cosine similarity across 3 partitioned index segments. A concurrent, service-oriented search frontend dispatches threaded requests to each segment and merges the ranked results. Segments and index servers scale independently for horizontal scalability.",
+        "A MapReduce pipeline builds a TF-IDF inverted index over 3,000+ Wikipedia documents. A Flask REST index server scores queries with PageRank-weighted cosine similarity across 3 partitioned index segments, deployed to AWS. A concurrent, service-oriented search frontend dispatches threaded requests to each segment and merges the ranked results. Segments and index servers scale independently for horizontal scalability.",
       tags: ["Python", "MapReduce", "Flask", "TF-IDF", "PageRank"],
       image: "/images/MapReduceArchitecture.jpg",
       imageFit: "contain", // architecture diagram, show in full, don't crop
@@ -122,7 +138,7 @@ export const DATA = {
       dates: "Jan 2025 - May 2025",
       impact: { value: "100+", label: "users served" },
       description:
-        "NLP pipeline over 1,000+ resumes and job postings. scikit-learn and TensorFlow ranking models with sentence-transformer embeddings and RAG, deployed via Streamlit to 100+ users.",
+        "NLP pipeline over 1,000+ labeled resumes and job postings with tokenization and TF-IDF vectorization for fit scoring at 92% accuracy. scikit-learn and TensorFlow ranking models with sentence-transformer embeddings and RAG, deployed via Streamlit to 100+ users.",
       tags: ["Python", "scikit-learn", "TensorFlow", "RAG", "Streamlit"],
       image: "/images/resumescreener.png",
       imageFit: "cover",
@@ -155,7 +171,7 @@ export const DATA = {
       group: "ML & Frameworks",
       items: ["PyTorch", "TensorFlow", "scikit-learn", "React", "Flask", "Node.js"],
     },
-    { group: "Tools", items: ["Git", "Docker", "AWS", "Kubernetes", "PostgreSQL", "Unix"] },
+    { group: "Tools", items: ["Git", "Docker", "AWS", "PostgreSQL", "Unix"] },
   ],
 
   publication: {

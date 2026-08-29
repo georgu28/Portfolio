@@ -83,7 +83,7 @@ export const DATA = {
       title: "Data Engineer",
       start: "Jun 2023",
       end: "Sep 2023",
-      logoUrl: "", // no logo asset; card falls back to "VI" initials
+      logoUrl: "/images/VU-Logo.jpg",
       impact: { value: "28,000+", label: "pathogen isolates analyzed" },
       highlights: [
         "Built R data pipelines that analyze 28,000+ pathogen isolates across 10+ years with PCA and clustering.",

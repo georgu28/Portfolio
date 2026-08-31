@@ -106,7 +106,10 @@ export const DATA = {
       image: "/images/MeloChron_SS.png",
       imageFit: "contain", // architecture diagram, show in full, don't crop
       imageLabel: "Architecture",
-      links: [{ type: "Demo", href: "https://melochron.vercel.app/" }],
+      links: [
+        { type: "Source", href: "https://github.com/georgu28/MeloChron" },
+        { type: "Demo", href: "https://melochron.vercel.app/" },
+      ],
     },
     {
       title: "Image Classification & Transfer Learning",

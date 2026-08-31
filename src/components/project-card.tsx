@@ -43,7 +43,10 @@ export function ProjectCard({
 }: Props) {
   const realLinks = (links ?? []).filter((l) => !isPlaceholder(l.href));
   const placeholderLinks = (links ?? []).filter((l) => isPlaceholder(l.href));
-  const primaryHref = realLinks[0]?.href;
+  // Prefer the live Demo for the title link; fall back to the first real link.
+  const primaryHref =
+    realLinks.find((l) => l.type.toLowerCase() === "demo")?.href ??
+    realLinks[0]?.href;
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:ring-2 hover:ring-muted">

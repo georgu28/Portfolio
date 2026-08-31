@@ -140,8 +140,8 @@ export const DATA = {
       dates: "Jan 2025 - May 2025",
       impact: { value: "100+", label: "users served" },
       description:
-        "An NLP pipeline over 1,000+ labeled resumes scores fit at 92% accuracy using tokenization and TF-IDF vectorization. scikit-learn and TensorFlow models with RAG retrieval rank the resumes, deployed via Streamlit to 100+ users.",
-      tags: ["Python", "scikit-learn", "TensorFlow", "RAG", "Streamlit"],
+        "An NLP pipeline built with TF-IDF and a scikit-learn LinearSVC classifies 12,000+ resumes into 43 categories at 82%/94% top-1/top-3 accuracy. RAG retrieval with FAISS and an LLM ranks resumes against live job postings, deployed via Streamlit to 100+ users.",
+      tags: ["Python", "scikit-learn", "LinearSVC", "RAG", "FAISS", "Streamlit"],
       image: "/images/resumescreener.png",
       imageFit: "cover",
       imageLabel: "",

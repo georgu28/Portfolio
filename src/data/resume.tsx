@@ -143,10 +143,10 @@ export const DATA = {
       imageFit: "cover",
       imageLabel: "",
       links: [
-        { type: "Source", href: "https://github.com/georgu28/MDST-Resume-Screener" },
+        { type: "Source", href: "https://github.com/georgu28/Resume-Screener" },
         // Live demo placeholder, George will add the URL on redeploy.
         // Previous Streamlit URL (currently down): https://mdst-resume-screener-bhaqj64tyfxtp3ekp4qxz6.streamlit.app/
-        { type: "Demo", href: "https://mdst-resume-screener-bhaqj64tyfxtp3ekp4qxz6.streamlit.app/" },
+        { type: "Demo", href: "https://resume-screener-28.streamlit.app/" },
       ],
     },
   ],

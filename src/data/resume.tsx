@@ -37,7 +37,7 @@ export const DATA = {
         "Delivered an end-to-end production asset certification feature, replacing manual outreach across 2,000+ assets with a secure PUT endpoint under three-tier authorization and matching React components.",
         "Built 2 EventBridge-scheduled Lambdas that automate certification reminder emails and daily ServiceNow CMDB sync, eliminating up to 8 months of data staleness from a prior one-time load.",
         "Authored idempotent Flyway PostgreSQL migrations that add a CMDB caching layer and tune SQL for compliance reporting.",
-        "Configured CI/CD across dev, QA, and prod with Jenkins, IAM roles, and CloudFormation stacks.",
+        "Configured CI/CD across dev, QA, and prod with Jenkins, IAM roles, SecretsManager, and CloudFormation stacks.",
       ],
       tags: ["AWS Lambda", "EventBridge", "Python", "PostgreSQL", "React", "Jenkins"],
       image: "",
@@ -70,7 +70,7 @@ export const DATA = {
       logoUrl: "/images/Nexteer-Logo.jpg",
       impact: { value: "87.5%", label: "less code-review time" },
       highlights: [
-        "Built an LLM-powered IDE extension in Python and TypeScript that parses 300+ internal engineering guidelines and automates compliance checks across C/H files via Azure AI and GitHub Copilot APIs.",
+        "Built an LLM-powered IDE extension in Python and TypeScript that parses 300+ internal engineering guidelines and automates compliance checks across C/H files via Azure AI and Claude APIs.",
         "Tuned prompt pipelines and few-shot strategies to 95% violation-detection accuracy on embedded steering code.",
         "Deployed to 26 sites, saving engineers an estimated 8 hours of manual code review per week.",
       ],

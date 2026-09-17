@@ -34,12 +34,12 @@ export const DATA = {
       logoUrl: "/images/Capital-One-Logo.jpg",
       impact: { value: "8 months", label: "of data staleness eliminated" },
       highlights: [
-        "Delivered an end-to-end production asset certification feature, replacing manual outreach across 2,000+ assets with a secure PUT endpoint under three-tier authorization and matching React components.",
+        "Delivered an end-to-end production asset certification feature, replacing manual outreach across 2,000+ assets with a secure Python/Flask PUT endpoint under three-tier authorization and matching React/TypeScript components.",
         "Built 2 EventBridge-scheduled Lambdas that automate certification reminder emails and daily ServiceNow CMDB sync, eliminating up to 8 months of data staleness from a prior one-time load.",
         "Authored idempotent Flyway PostgreSQL migrations that add a CMDB caching layer and tune SQL for compliance reporting.",
         "Configured CI/CD across dev, QA, and prod with Jenkins, IAM roles, SecretsManager, and CloudFormation stacks.",
       ],
-      tags: ["AWS Lambda", "EventBridge", "Python", "PostgreSQL", "React", "Jenkins"],
+      tags: ["AWS Lambda", "EventBridge", "Python", "Flask", "PostgreSQL", "React", "Jenkins"],
       image: "",
       links: [],
     },
@@ -56,7 +56,7 @@ export const DATA = {
         "Built a multi-tenant FastAPI/PostgreSQL/Next.js platform for a 3-campus storage business, with JWT auth across 20+ REST endpoints and a 318-test backend suite.",
         "Migrated 475 legacy bookings into 2,000+ records across 5 tables, replacing a failing Zapier Google Sheets workflow.",
       ],
-      tags: ["FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe"],
+      tags: ["Python", "FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe"],
       image: "/images/BoilerVault_SS.jpg",
       links: [
         { type: "Demo", href: "https://boilervault-ops-public-demo.vercel.app" },
@@ -141,7 +141,7 @@ export const DATA = {
       impact: { value: "100+", label: "users served" },
       description:
         "An NLP pipeline built with TF-IDF and a scikit-learn LinearSVC classifies 12,000+ resumes into 43 categories at 82%/94% top-1/top-3 accuracy. RAG retrieval with FAISS and an LLM ranks resumes against live job postings, deployed via Streamlit to 100+ users.",
-      tags: ["Python", "scikit-learn", "LinearSVC", "RAG", "FAISS", "Streamlit"],
+      tags: ["Python", "scikit-learn", "LinearSVC", "RAG", "FAISS", "HuggingFace", "Streamlit"],
       image: "/images/resumescreener.png",
       imageFit: "cover",
       imageLabel: "",
@@ -173,7 +173,7 @@ export const DATA = {
       group: "ML & Frameworks",
       items: ["PyTorch", "TensorFlow", "scikit-learn", "React", "Flask", "Node.js"],
     },
-    { group: "Tools", items: ["Git", "Docker", "AWS", "PostgreSQL", "Unix"] },
+    { group: "Tools", items: ["Git", "Docker", "AWS", "PostgreSQL", "Unix", "Claude Code"] },
   ],
 
   publication: {

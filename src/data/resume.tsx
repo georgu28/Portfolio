@@ -21,7 +21,7 @@ export const DATA = {
   contact: {
     email: "georgu@umich.edu",
     github: "https://github.com/georgu28",
-    linkedin: "https://linkedin.com/in/george-gu-146bb0251",
+    linkedin: "https://linkedin.com/in/georgu",
     resume: "/resume.pdf", // George adds the file to /public
   },
 

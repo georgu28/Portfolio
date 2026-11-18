@@ -8,7 +8,7 @@ export const DATA = {
   headshotUrl: "/images/headshot1.jpg", // alt available: /images/headshot2.jpg
   tagline: "CS @ Michigan · ML/SWE · prev Capital One & Nexteer", // metadata/OG only
   greeting: "Hi, I'm George",
-  bio: "CS student at the University of Michigan. I like building systems that solve real problems, from backend infrastructure to AI-powered tools.",
+  bio: "CS student at the University of Michigan. I build systems that solve real problems, from backend infrastructure to AI-powered tools.",
   about:
     "I'm an undergraduate at the University of Michigan pursuing a B.S.E. in Computer Science. \
     I've worked as a founding engineer building production software, developed AI tools used by engineers across 26 sites, and published first-author research. \
@@ -48,7 +48,7 @@ export const DATA = {
     },
     {
       company: "BoilerVault Storage LLC",
-      title: "Founding Engineer",
+      title: "Software Engineer (Contract)",
       start: "January 2026",
       end: "June 2026",
       logoUrl: "/images/BoilerVault_Logo.jpg",

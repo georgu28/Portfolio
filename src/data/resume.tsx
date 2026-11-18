@@ -10,9 +10,9 @@ export const DATA = {
   greeting: "Hi, I'm George",
   bio: "CS student at the University of Michigan. I build systems that solve real problems, from backend infrastructure to AI-powered tools.",
   about:
-    "I'm an undergraduate at the University of Michigan pursuing a B.S.E. in Computer Science. \
-    I've worked as a founding engineer building production software, developed AI tools used by engineers across 26 sites, and published first-author research. \
-    Outside of engineering, I'm into philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
+    "I'm an undergraduate at the University of Michigan pursuing a B.S.E. in Computer Science. " +
+    "I've worked as a founding engineer building production software, developed AI tools used by engineers across 26 sites, and published first-author research. " +
+    "Outside of engineering, I'm into philosophy, game design, bouldering, skateboarding, golf, guitar, and calisthenics.",
   intro: {
     experience: "Building software, solving hard engineering problems, and getting things into production.",
     projects: "A few things I've built across machine learning, systems, and full-stack development.",

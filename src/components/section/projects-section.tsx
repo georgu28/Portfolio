@@ -10,7 +10,6 @@ export default function ProjectsSection() {
           title={project.title}
           category={project.category}
           description={project.description}
-          highlights={project.highlights}
           dates={project.dates}
           impact={project.impact}
           tags={project.tags}

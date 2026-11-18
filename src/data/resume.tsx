@@ -135,6 +135,7 @@ export const DATA = {
       imageLabel: "Architecture",
       links: [
         { type: "Source", href: "https://github.com/georgu28/MeloChron" },
+        { type: "Demo", href: "https://melochron.vercel.app/" },
       ],
     },
   ],

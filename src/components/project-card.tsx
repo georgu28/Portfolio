@@ -3,6 +3,7 @@ import { ArrowUpRight, Github, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TechTag } from "@/components/tech-tag";
 import { ZoomableImage } from "@/components/zoomable-image";
+import { ImpactMetrics } from "@/components/impact-metrics";
 
 interface ProjectLink {
   type: string;
@@ -11,9 +12,11 @@ interface ProjectLink {
 
 interface Props {
   title: string;
+  category?: string;
   description: string;
+  highlights?: readonly string[];
   dates: string;
-  impact: { value: string; label: string };
+  impact: readonly { value: string; label: string }[];
   tags: readonly string[];
   image?: string;
   imageFit?: "cover" | "contain";
@@ -32,7 +35,9 @@ function LinkIcon({ type }: { type: string }) {
 
 export function ProjectCard({
   title,
+  category,
   description,
+  highlights,
   dates,
   impact,
   tags,
@@ -79,14 +84,18 @@ export function ProjectCard({
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-baseline justify-between gap-2">
-          <span className="text-2xl font-bold tracking-tight text-accent-blue tabular-nums sm:text-3xl">
-            {impact.value}
-          </span>
+          {category ? (
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+              {category}
+            </span>
+          ) : (
+            <span />
+          )}
           <time className="flex-none text-xs tabular-nums text-muted-foreground">
             {dates}
           </time>
         </div>
-        <p className="mt-0.5 text-sm text-muted-foreground">{impact.label}</p>
+        <ImpactMetrics metrics={impact} size="md" className="mt-2" />
 
         <h3 className="mt-3 font-semibold">
           {primaryHref ? (
@@ -109,6 +118,19 @@ export function ProjectCard({
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
+
+        {highlights?.length ? (
+          <ul className="mt-3 space-y-1.5">
+            {highlights.map((point) => (
+              <li
+                key={point}
+                className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-2.5 before:size-1 before:rounded-full before:bg-muted-foreground/60"
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+        ) : null}
 
         {tags?.length ? (
           <div className="mt-4 flex flex-wrap gap-1.5">

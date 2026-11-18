@@ -4,6 +4,7 @@ import { Globe } from "lucide-react";
 import { DATA } from "@/data/resume";
 import { TechTag } from "@/components/tech-tag";
 import { ZoomableImage } from "@/components/zoomable-image";
+import { ImpactMetrics } from "@/components/impact-metrics";
 
 export default function WorkSection() {
   return (
@@ -43,14 +44,7 @@ export default function WorkSection() {
           </div>
 
           {/* Impact metric, surfaced first */}
-          <div className="mt-4 flex items-baseline gap-2">
-            <span className="text-3xl font-bold tracking-tight text-accent-blue tabular-nums sm:text-4xl">
-              {work.impact.value}
-            </span>
-            <span className="text-sm text-muted-foreground">
-              {work.impact.label}
-            </span>
-          </div>
+          <ImpactMetrics metrics={work.impact} className="mt-4" />
 
           <ul className="mt-3 space-y-1.5">
             {work.highlights.map((point) => (

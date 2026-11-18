@@ -113,6 +113,9 @@ export default function Page() {
                 {edu.detail ? (
                   <p className="text-sm text-muted-foreground">{edu.detail}</p>
                 ) : null}
+                {edu.honors ? (
+                  <p className="mt-2 text-sm text-muted-foreground">{edu.honors}</p>
+                ) : null}
               </div>
               <p className="flex-none text-xs tabular-nums text-muted-foreground sm:text-sm">
                 {edu.start} – {edu.end}
@@ -180,8 +183,7 @@ export default function Page() {
           Let&apos;s talk
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-          Open to Summer 2027 internships in ML and software engineering. The
-          fastest way to reach me is email.
+          {DATA.cta}
         </p>
 
         <div className="mt-5 flex justify-center">

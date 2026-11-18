@@ -100,11 +100,6 @@ export const DATA = {
       ],
       description:
         "A gamified LeetCode platform that helps users track what they understand, what they're forgetting, and what to practice next.",
-      highlights: [
-        "Built a problem catalog organized around 17 algorithm skills, with skill decay modeled after human memory.",
-        "Developed Claude-powered code reviews that evaluate approach, complexity, and line-level issues without executing submissions.",
-        "Converted review results into deterministic Elo-style scores using Supabase transactions.",
-      ],
       tags: ["Next.js", "TypeScript", "Supabase", "Claude API", "Tailwind CSS"],
       image: "/images/Traversyl.png",
       imageFit: "cover",
@@ -124,11 +119,6 @@ export const DATA = {
       ],
       description:
         "A music recommendation model that predicts whether someone will return to a track after hearing it for the first time.",
-      highlights: [
-        "Built a PyTorch self-attention model combining listening history with audio-content embeddings across 100,000+ listeners.",
-        "Improved track-adoption prediction from 0.4212 to 0.4820 PR-AUC.",
-        "Cut training time by 92% while scaling training data 7x through controlled experiments on model architecture and embeddings.",
-      ],
       tags: ["PyTorch", "Transformers", "NumPy", "scikit-learn", "Audio Embeddings"],
       image: "/images/MeloChron_SS.png",
       imageFit: "contain", // architecture diagram, show in full, don't crop

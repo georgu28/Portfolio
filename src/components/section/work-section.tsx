@@ -44,18 +44,11 @@ export default function WorkSection() {
           </div>
 
           {/* Impact metric, surfaced first */}
-          <ImpactMetrics metrics={work.impact} className="mt-4" />
+          <ImpactMetrics metrics={work.impact} divided className="mt-4" />
 
-          <ul className="mt-3 space-y-1.5">
-            {work.highlights.map((point) => (
-              <li
-                key={point}
-                className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-2.5 before:size-1 before:rounded-full before:bg-muted-foreground/60"
-              >
-                {point}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            {work.description}
+          </p>
 
           {work.image ? (
             <div className="mt-4 overflow-hidden rounded-lg border border-border">

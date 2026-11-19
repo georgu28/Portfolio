@@ -37,12 +37,9 @@ export const DATA = {
         { value: "12,000+", label: "developers" },
         { value: "6+ hours", label: "saved weekly" },
       ],
-      highlights: [
-        "Built a full-stack asset certification workflow across 2,000+ services, eliminating 8+ months of data staleness.",
-        "Architected two scheduled AWS Lambdas for automated reminders and ServiceNow CMDB syncing, saving engineers 6+ hours weekly.",
-        "Wrote 7 idempotent PostgreSQL migrations and resolved 17+ CI/CD incidents, helping raise pipeline success to 97%.",
-      ],
-      tags: ["AWS Lambda", "EventBridge", "Python", "Flask", "PostgreSQL", "React", "Jenkins", "CloudFormation"],
+      description:
+        "Built a full-stack asset certification feature and EventBridge-scheduled AWS Lambdas that resolved 8+ months of data staleness across 2,000+ services, integrating Snowflake, ServiceNow, and internal platforms.",
+      tags: ["Python", "AWS Lambda", "EventBridge", "S3", "PostgreSQL", "Flyway", "Snowflake", "ServiceNow", "Jenkins", "CloudFormation"],
       image: "",
       links: [],
     },
@@ -53,16 +50,12 @@ export const DATA = {
       end: "June 2026",
       logoUrl: "/images/BoilerVault_Logo.jpg",
       impact: [
-        { value: "$130K+", label: "processed" },
-        { value: "99.6%", label: "data consistency" },
+        { value: "+200%", label: "business growth" },
+        { value: "$130K+", label: "revenue processed" },
       ],
-      highlights: [
-        "Built a multi-tenant platform with FastAPI, PostgreSQL, and Next.js, scaling a three-campus storage business by 200%.",
-        "Designed 7+ webhook pipelines with payment matching and out-of-order event handling across financial accounts and consumer sites.",
-        "Migrated 475 legacy bookings into 2,000+ records across five tables, shipping seven production phases in eight weeks.",
-        "Built a 318-test backend suite to verify migrations, payment flows, and production behavior.",
-      ],
-      tags: ["Python", "FastAPI", "PostgreSQL", "Next.js", "TypeScript", "Stripe", "Claude Code"],
+      description:
+        "Built a multi-tenant platform with JWT auth, role-based access, and webhook-driven payment pipelines for a three-campus storage startup, shipping seven production phases in eight weeks.",
+      tags: ["Python", "FastAPI", "PostgreSQL", "Alembic", "Next.js", "TypeScript", "Stripe", "Claude Code"],
       image: "/images/BoilerVault_SS.jpg",
       links: [
         { type: "Demo", href: "https://boilervault-ops-public-demo.vercel.app" },
@@ -78,12 +71,9 @@ export const DATA = {
         { value: "60%", label: "less code-review time" },
         { value: "95%", label: "detection recall" },
       ],
-      highlights: [
-        "Built an AI-powered code compliance tool that checks C/C++ code against 300+ engineering guidelines.",
-        "Tuned prompts and few-shot examples to reach 95% violation-detection recall, with false positives on just 2% of files.",
-        "Deployed the tool as a VS Code extension across 26 sites, reducing manual review time by 60% for 15+ engineers.",
-      ],
-      tags: ["Python", "TypeScript", "Azure AI", "LLMs", "Prompt Engineering"],
+      description:
+        "Built an LLM-powered compliance tool that checks code against 300+ engineering guidelines, backed by an evaluation harness and deployed to production as a VS Code extension.",
+      tags: ["Python", "TypeScript", "Azure AI", "Claude API", "LLMs", "Prompt Caching", "VS Code"],
       image: "",
       links: [],
     },
